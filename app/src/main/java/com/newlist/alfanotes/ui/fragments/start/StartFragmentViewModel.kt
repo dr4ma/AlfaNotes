@@ -2,6 +2,7 @@ package com.newlist.alfanotes.ui.fragments.start
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import com.newlist.alfanotes.database.room.AppRoomDao
 import com.newlist.alfanotes.database.room.AppRoomDatabase
 import com.newlist.alfanotes.database.room.AppRoomRepository
 import com.newlist.alfanotes.utilits.APP_ACTIVITY
