@@ -12,7 +12,10 @@
         tools:layout="@layout/fragment_add_new" >
         <action
             android:id="@+id/action_addNewFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_right_to_left_enter"
+            app:exitAnim="@anim/slide_right_to_left_out"
+            app:popUpTo="@id/navigation_graph" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
@@ -21,22 +24,33 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_startFragment"
-            app:destination="@id/startFragment" />
+            app:destination="@id/startFragment"
+            app:enterAnim="@anim/slide_right_to_left_enter"
+            app:exitAnim="@anim/slide_right_to_left_out"
+            app:popUpTo="@id/navigation_graph" />
         <action
             android:id="@+id/action_mainFragment_to_nodeFragment"
-            app:destination="@id/nodeFragment" />
+            app:destination="@id/nodeFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
         <action
             android:id="@+id/action_mainFragment_to_addNewFragment"
-            app:destination="@id/addNewFragment" />
+            app:destination="@id/addNewFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/nodeFragment"
-        android:name="com.newlist.alfanotes.ui.fragments.NodeFragment"
+        android:name="com.newlist.alfanotes.ui.fragments.node.NodeFragment"
         android:label="fragment_node"
         tools:layout="@layout/fragment_node" >
         <action
             android:id="@+id/action_nodeFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_right_to_left_enter"
+            app:exitAnim="@anim/slide_right_to_left_out"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_graph" />
     </fragment>
     <fragment
         android:id="@+id/startFragment"
@@ -45,6 +59,10 @@
         tools:layout="@layout/fragment_start" >
         <action
             android:id="@+id/action_startFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_graph" />
     </fragment>
 </navigation>

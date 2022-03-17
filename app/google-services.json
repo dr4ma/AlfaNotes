@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1018626225010",
+    "project_id": "alfanotes-b639c",
+    "storage_bucket": "alfanotes-b639c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018626225010:android:7390bf1cff867f6a3ba3eb",
+        "android_client_info": {
+          "package_name": "com.newlist.alfanotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018626225010-a2q8qm8lrfqdqb0m102tovdqn20t17or.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDrOPqii7Jxg02p9iFb87XTuE_lpeFaSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018626225010-a2q8qm8lrfqdqb0m102tovdqn20t17or.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

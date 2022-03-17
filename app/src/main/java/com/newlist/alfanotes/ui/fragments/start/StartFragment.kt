@@ -9,8 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import com.newlist.alfanotes.R
 import com.newlist.alfanotes.databinding.FragmentStartBinding
-import com.newlist.alfanotes.utilits.APP_ACTIVITY
-import com.newlist.alfanotes.utilits.TYPE_ROOM
+import com.newlist.alfanotes.utilits.*
 import kotlinx.android.synthetic.main.fragment_start.*
 
 class StartFragment : Fragment() {
@@ -37,6 +36,28 @@ class StartFragment : Fragment() {
         btn_room.setOnClickListener {
             mViewModel.initDatabase(TYPE_ROOM){
                 APP_ACTIVITY.mNavController.navigate(R.id.action_startFragment_to_mainFragment)
+            }
+        }
+
+        mBinding.btnFirebase.setOnClickListener {
+            binding?.apply {
+                inputEmail.visibility = View.VISIBLE
+                inputPassword.visibility = View.VISIBLE
+                btnLogin.visibility = View.VISIBLE
+                btnLogin.setOnClickListener {
+                    val inputEmail = inputEmail.text.toString()
+                    val inputPassword = inputPassword.text.toString()
+                    if(inputEmail.isNotEmpty() && inputPassword.isNotEmpty()){
+                        EMAIL = inputEmail
+                        PASSWORD = inputPassword
+                        mViewModel.initDatabase(TYPE_FIREBASE){
+                            APP_ACTIVITY.mNavController.navigate(R.id.action_startFragment_to_mainFragment)
+                        }
+                    }
+                    else{
+                        showToast(getString(R.string.input_password_and_email))
+                    }
+                }
             }
         }
     }

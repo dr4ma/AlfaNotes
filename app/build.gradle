@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-android-extensions'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -34,7 +35,6 @@ android {
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-
     // Navigation Component
     def nav_version = "2.4.1"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
@@ -54,6 +54,12 @@ dependencies {
     implementation("androidx.room:room-guava:$roomVersion")
     testImplementation("androidx.room:room-testing:$roomVersion")
     implementation("androidx.room:room-paging:2.5.0-alpha01")
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:29.2.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-firestore:21.4.0'
 
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'

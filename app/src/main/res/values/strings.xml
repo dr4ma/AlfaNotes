@@ -7,4 +7,9 @@
     <string name="room">Локальное хранилище</string>
     <string name="title">Заметки</string>
     <string name="toast_enter_name">Введите имя заметки</string>
+    <string name="firebase">Облачное хранилище</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="log">Login</string>
+    <string name="input_password_and_email">Введите пароль и почту</string>
 </resources>
