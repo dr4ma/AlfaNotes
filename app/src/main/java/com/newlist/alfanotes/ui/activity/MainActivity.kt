@@ -8,6 +8,7 @@ import androidx.navigation.Navigation
 import com.newlist.alfanotes.R
 import com.newlist.alfanotes.databinding.ActivityMainBinding
 import com.newlist.alfanotes.utilits.APP_ACTIVITY
+import com.newlist.alfanotes.utilits.AppPreferences
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(mToolbar)
         title = getString(R.string.title)
 
+        AppPreferences.getPreferences(APP_ACTIVITY)
     }
 
     override fun onDestroy() {

@@ -41,20 +41,27 @@ class AppFirebaseRepository: DataBaseRepository {
     }
 
     override fun connectToDatabase(onSuccess: () -> Unit, onFail: (String) -> Unit) {
-        mAuth.signInWithEmailAndPassword(EMAIL, PASSWORD)
-            .addOnSuccessListener {
-                onSuccess()
-            }
-            .addOnFailureListener {
-                mAuth.createUserWithEmailAndPassword(EMAIL, PASSWORD)
-                    .addOnSuccessListener {
-                        mFireStoreReference.collection(mAuth.currentUser?.uid.toString())
-                        onSuccess()
-                    }
-                    .addOnFailureListener {
-                        onFail(it.message.toString())
-                    }
-            }
+
+        if (mAuth.currentUser != null){
+            onSuccess()
+        }
+        else{
+            mAuth.signInWithEmailAndPassword(EMAIL, PASSWORD)
+                .addOnSuccessListener {
+                    onSuccess()
+                }
+                .addOnFailureListener {
+                    mAuth.createUserWithEmailAndPassword(EMAIL, PASSWORD)
+                        .addOnSuccessListener {
+                            mFireStoreReference.collection(mAuth.currentUser?.uid.toString())
+                            onSuccess()
+                        }
+                        .addOnFailureListener {
+                            onFail(it.message.toString())
+                        }
+                }
+        }
+
     }
 
     override fun signOut() {

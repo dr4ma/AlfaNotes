@@ -53,8 +53,8 @@ class NodeFragment : Fragment() {
         when(item.itemId){
             R.id.btn_delete -> {
                 mViewModel.delete(mCurrentNote){
-                    APP_ACTIVITY.mNavController.navigate(R.id.action_nodeFragment_to_mainFragment)
                 }
+                APP_ACTIVITY.mNavController.navigate(R.id.action_nodeFragment_to_mainFragment)
             }
         }
         return super.onOptionsItemSelected(item)

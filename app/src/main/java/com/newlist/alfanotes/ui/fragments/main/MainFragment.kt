@@ -10,6 +10,7 @@ import com.newlist.alfanotes.R
 import com.newlist.alfanotes.databinding.FragmentMainBinding
 import com.newlist.alfanotes.model.AppNote
 import com.newlist.alfanotes.utilits.APP_ACTIVITY
+import com.newlist.alfanotes.utilits.AppPreferences
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
@@ -58,8 +59,9 @@ class MainFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.btn_delete -> {
+            R.id.btn_exit -> {
                 mViewModel.signOut()
+                AppPreferences.setInitUser(false)
                 APP_ACTIVITY.mNavController.navigate(R.id.action_mainFragment_to_startFragment)
             }
         }

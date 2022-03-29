@@ -30,4 +30,9 @@ class AllNotesLiveData: LiveData<List<AppNote>>() {
         }
         super.onActive()
     }
+
+    override fun onInactive() {
+        listModels.clear()
+        super.onInactive()
+    }
 }
